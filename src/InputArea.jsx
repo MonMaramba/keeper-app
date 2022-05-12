@@ -21,21 +21,23 @@ const InputArea = (props) => {
 
   return (
     <div className='container'>
-      <form>
+      <form className='form'>
         <input
-          className='input__box'
+          className='form_input'
           name='title'
           type='text'
+          placeholder='Title'
           onChange={handleChange}
           value={postText.title}
         />
         <textarea
           className='textArea'
           name='content'
+          placeholder='Take a note...'
           onChange={handleChange}
           value={postText.content}
         />
-        <button>Add</button>
+        <button className='form_button'>Add</button>
       </form>
     </div>
   );
