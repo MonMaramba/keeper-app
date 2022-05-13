@@ -10,12 +10,10 @@ const InputArea = (props) => {
   const handleChange = (event) => {
     const { value, name } = event.target;
     setPostText((prevValue) => {
-      if (name === 'title') {
-        return { title: value, content: prevValue };
-      } else if (name === 'content') {
-        return { title: prevValue, content: value };
-      }
-      console.log(postText.title, postText.content);
+      return {
+        ...prevValue,
+        [name]: value,
+      };
     });
   };
 
@@ -37,7 +35,14 @@ const InputArea = (props) => {
           onChange={handleChange}
           value={postText.content}
         />
-        <button className='form_button'>Add</button>
+        <button
+          className='form_button'
+          onClick={() => {
+            props.addItem(postText);
+          }}
+        >
+          Add
+        </button>
       </form>
     </div>
   );
