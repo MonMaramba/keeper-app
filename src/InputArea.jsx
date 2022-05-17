@@ -17,6 +17,11 @@ const InputArea = (props) => {
     });
   };
 
+  const submitNote = (event) => {
+    props.addItem(postText);
+    event.preventDefault();
+  };
+
   return (
     <div className='container'>
       <form className='form'>
@@ -29,18 +34,15 @@ const InputArea = (props) => {
           value={postText.title}
         />
         <textarea
+          key={1}
+          type='text'
           className='textArea'
           name='content'
           placeholder='Take a note...'
           onChange={handleChange}
           value={postText.content}
         />
-        <button
-          className='form_button'
-          onClick={() => {
-            props.addItem(postText);
-          }}
-        >
+        <button className='form_button' onClick={submitNote}>
           Add
         </button>
       </form>

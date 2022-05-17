@@ -7,27 +7,19 @@ import './main.scss';
 import { useState } from 'react';
 
 const App = () => {
-  const [notes, setNotes] = useState([
-    {
-      title: '',
-      content: '',
-    },
-  ]);
-  const addItem = (postText) => {
-    console.log(postText);
+  const [notes, setNotes] = useState([]);
+  const addNote = (newNote) => {
     setNotes((prevItems) => {
-      return [...prevItems, postText];
+      return [...prevItems, newNote];
     });
   };
 
   return (
     <div>
       <Header />
-      <InputArea addItem={addItem} />
-      {notes.map((note) => {
-        return (
-          <Note key={note.key} title={note.title} content={note.content} />
-        );
+      <InputArea addItem={addNote} />
+      {notes.map((note, i) => {
+        return <Note key={i} title={note.title} content={note.content} />;
       })}
       <Footer />
     </div>
