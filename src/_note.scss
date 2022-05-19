@@ -17,6 +17,24 @@
         margin-bottom: 10px;
         white-space: pre-wrap;
         word-wrap: break-word;
+
+
     }
+
+    button {
+        position: relative;
+        right: -150px;
+        bottom: 10px;
+        background: #f5ba13;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        outline: none;
+    }
+
 
 }
