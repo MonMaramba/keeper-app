@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import AddIcon from '@mui/icons-material/Add';
+import { Fab } from '@mui/material';
 import './_inputArea.scss';
 
 const InputArea = (props) => {
@@ -46,9 +48,9 @@ const InputArea = (props) => {
           onChange={handleChange}
           value={postText.content}
         />
-        <button className='form_button' onClick={submitNote}>
-          Add
-        </button>
+        <Fab className='form_button' onClick={submitNote}>
+          <AddIcon />
+        </Fab>
       </form>
     </div>
   );
