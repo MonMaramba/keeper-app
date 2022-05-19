@@ -20,6 +20,10 @@ const InputArea = (props) => {
   const submitNote = (event) => {
     props.addItem(postText);
     event.preventDefault();
+    setPostText({
+      title: '',
+      content: '',
+    });
   };
 
   return (
